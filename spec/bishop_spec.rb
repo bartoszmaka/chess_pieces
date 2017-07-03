@@ -7,6 +7,12 @@ RSpec.describe Bishop do
 
       expect(bishop).to be_a_kind_of Bishop
     end
+
+    it 'disallows creation at invalid position' do
+      expect do
+        Bishop.new('a9')
+      end.to raise_error Chessman::InvalidInputException
+    end
   end
 
   describe '#valid_moves' do

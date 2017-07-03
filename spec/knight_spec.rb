@@ -7,6 +7,12 @@ RSpec.describe Knight do
 
       expect(knight).to be_a_kind_of Knight
     end
+
+    it 'disallows creation at invalid position' do
+      expect do
+        Knight.new('a9')
+      end.to raise_error Chessman::InvalidInputException
+    end
   end
 
   describe '#valid_moves' do
