@@ -41,7 +41,7 @@ class Chessman
 
   def chess_notation_to_array_indexes(position)
     letter, number = position.chars
-    coord_x = ('a'..'g').to_a.index(letter.downcase)
+    coord_x = ('a'..'h').to_a.index(letter.downcase)
     coord_y = (1..8).to_a.reverse.index(number.to_i)
     [coord_x, coord_y]
   end
