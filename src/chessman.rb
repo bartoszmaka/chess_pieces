@@ -1,5 +1,10 @@
 class Chessman
+
+  class InvalidInputException < StandardError
+  end
+
   def initialize(position)
+    validate_given_position(position)
     @x, @y = chess_notation_to_array_indexes(position)
     puts formatted_valid_moves_list
   end
@@ -14,6 +19,12 @@ class Chessman
   end
 
   private
+
+  def validate_given_position(position)
+    valid_pattern = /\A[a-h][1-8]\z/
+    return if position =~ valid_pattern
+    raise InvalidInputException.new("expected chess notation, got #{position}")
+  end
 
   def formatted_valid_moves_list
     valid_moves.join ' '
