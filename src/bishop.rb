@@ -1,7 +1,6 @@
 require_relative 'chessman'
 
 class Bishop < Chessman
-
   private
 
   def valid_moves_mask

@@ -1,7 +1,6 @@
 require_relative 'chessman'
 
 class Knight < Chessman
-
   private
 
   def valid_moves_mask
@@ -13,7 +12,7 @@ class Knight < Chessman
       [-2, 1],
       [-2, -1],
       [-1, 2],
-      [-1, -2],
+      [-1, -2]
     ]
   end
 end

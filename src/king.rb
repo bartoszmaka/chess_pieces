@@ -1,7 +1,6 @@
 require_relative 'chessman'
 
 class King < Chessman
-
   private
 
   def valid_moves_mask

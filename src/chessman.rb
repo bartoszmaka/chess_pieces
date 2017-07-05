@@ -1,4 +1,6 @@
 class Chessman
+  attr_accessor :x, :y
+
   class InvalidInputException < StandardError
   end
 
@@ -31,7 +33,7 @@ class Chessman
 
   def position_moved_by(coords)
     x_shift, y_shift = coords
-    [@x + x_shift, @y + y_shift]
+    [x + x_shift, y + y_shift]
   end
 
   def outside_board?(coords)
